@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">thaigov</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9003</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9004</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +59,8 @@ a data.frame object. Default as TRUE.</p></dd>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">th_package_search</span><span class="op">(</span><span class="st">"โควิด"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># ASCII values means COVID in Thai</span></span>
+<span class="r-in"><span class="fu">th_package_search</span><span class="op">(</span>keyword <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/utf8Conversion.html" class="external-link">intToUtf8</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">3650L</span>, <span class="fl">3588L</span>, <span class="fl">3623L</span>, <span class="fl">3636L</span>, <span class="fl">3604L</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                     license_title</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1: Creative Commons Attributions</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  2: Creative Commons Attributions</span>
