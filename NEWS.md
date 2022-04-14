@@ -1,5 +1,7 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# thaigov 0.0.0.9006
+
 # thaigov 0.0.0.9005
 
 # thaigov 0.0.0.9004
