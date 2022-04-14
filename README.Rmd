@@ -42,10 +42,10 @@ Insert the your API key in the following format: `THGOV_OPENDATA_TOKEN=<your-API
 library(thaigov)
 library(tibble)
 
-covid_resources <- th_resource_search("โควิด") # search for resources that contain the word "COVID" in Thai in their description.
+covid_resources <- th_resource_search("name:COVID-19") # search for resources that contain the word "COVID" in Thai in their description.
 covid_resources %>% as_tibble()
 covid_csv_datasets <- covid_resources %>%
-  .[format == "CSV" & !is.na(resource_id), resource_id] %>%
+  .[format == "CSV" & !is.na(id), id] %>%
   lapply(function(x) th_get(x) %>% as_tibble())
 covid_csv_datasets
 

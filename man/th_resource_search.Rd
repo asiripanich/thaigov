@@ -4,15 +4,15 @@
 \alias{th_resource_search}
 \title{Searches for resources satisfying a given search criteria.}
 \usage{
-th_resource_search(keyword)
+th_resource_search(query)
 }
 \arguments{
-\item{keyword}{keyword to search}
+\item{query}{query.}
 }
 \description{
 Searches for resources satisfying a given search criteria.
 }
 \examples{
 # ASCII values means COVID in Thai
-th_resource_search(keyword = intToUtf8(c(3650L, 3588L, 3623L, 3636L, 3604L)))
+th_resource_search(query = paste0("name:", intToUtf8(c(3650L, 3588L, 3623L, 3636L, 3604L))))
 }

@@ -80,13 +80,13 @@ th_package_search <- function(keyword, as_dataframe = TRUE) {
 }
 
 #' Searches for resources satisfying a given search criteria.
-#' @param keyword keyword to search
+#' @param query query.
 #' @export
 #' @examples
 #' # ASCII values means COVID in Thai
-#' th_resource_search(keyword = intToUtf8(c(3650L, 3588L, 3623L, 3636L, 3604L)))
-th_resource_search <- function(keyword) {
-  res <- build_ckan_url(path = "resource_search", query = list(query = paste0("description:", keyword))) %>%
+#' th_resource_search(query = paste0("name:", intToUtf8(c(3650L, 3588L, 3623L, 3636L, 3604L))))
+th_resource_search <- function(query) {
+  res <- build_ckan_url(path = "resource_search", query = list(query = query)) %>%
     GET(add_headers("api-key" = Sys.getenv("THGOV_OPENDATA_TOKEN"))) %>%
     content()
   res[["result"]][["results"]] %>%
