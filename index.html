@@ -61,7 +61,7 @@
 <p>The goal of thaigov is to provide an easy access to the datasets on the <a href="https://data.go.th/" class="external-link">Open Government Data of Thailand</a> API from R. The Thai documentation of the API can be viewed here: <a href="https://opendata.data.go.th/pages/data-go-th-api" class="external-link uri">https://opendata.data.go.th/pages/data-go-th-api</a>.</p>
 <p>เป้าหมายของ <code>thaigov</code> แพ็คเก็จคือการทำให้ผู้ใช้ R สามารถเข้าถึงข้อมูลเปิดของรัฐบาลไทยได้ง่ายยิ่งขึ้น คุณสามารถอ่านรายละเอียดของ API ได้ที่ <a href="https://opendata.data.go.th/pages/data-go-th-api" class="external-link uri">https://opendata.data.go.th/pages/data-go-th-api</a></p>
 <div class="section level2">
-<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+<h2 id="installation-การติดตั้ง">Installation (การติดตั้ง)<a class="anchor" aria-label="anchor" href="#installation-%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87"></a>
 </h2>
 <p>You can install the development version of thaigov from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <p>ติดตั้งแพ็คเกจได้จาก GitHub โดยใช้โค้ดดังต่อไปนี้:</p>
@@ -70,7 +70,7 @@
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"asiripanich/thaigov"</span><span class="op">)</span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+<h2 id="example-ตัวอย่าง">Example (ตัวอย่าง)<a class="anchor" aria-label="anchor" href="#example-%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87"></a>
 </h2>
 <p>First put your Open Government Data of Thailand API key in your machine’s <code>.Renviron</code> file. I normally use <code>usethis::edit_r_environ()</code> to find and open my <code>.Renviron</code> file. Insert the your API key in the following format: <code>THGOV_OPENDATA_TOKEN=&lt;your-API-key&gt;</code>.</p>
 <p>ก่อนอื่นเราต้องบันทึกค่า API คีย์ไปยัง <code>.Renviron</code> ไฟล์ ซึ่งคุณสามารถใช้ <code>usethis::edit_r_environ()</code> ในการเปิดไฟล์ขึ้นมา จากนั้นให้นำ API คีย์ลงไปใส่ดังต่อไปนี้ <code>THGOV_OPENDATA_TOKEN=&lt;your-API-key&gt;</code></p>
@@ -188,8 +188,10 @@
 <span class="co">#&gt; # … with 90 more rows</span>
 
 <span class="fu"><a href="reference/th_package_list.html">th_package_list</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>
-<span class="co">#&gt;  [1] "item_ed8058a7-2795-438d-8302-f430357750ff" "km-2563-2564"                              "01_01012"                                  "os_12_00024"                               "hydro-monthly-report"                     </span>
-<span class="co">#&gt;  [6] "td131931164"                               "cpipindexes"                               "my_jan_2562-2564"                          "item_a723b2ae-6a97-4c13-80ab-2baa86a3403d" "dataset03_3-2_06"</span>
+<span class="co">#&gt;  [1] "garbage_service"                                                 "tpsok_13"                                                        "stat_set_th-csv"                                                </span>
+<span class="co">#&gt;  [4] "item_b5612bd8-6aa4-4c0d-b6e4-d925543ae772"                       "cfoubon-apr2564"                                                 "tpsocpi_3"                                                      </span>
+<span class="co">#&gt;  [7] "item_a99cfdc9-5d4e-443b-b561-d655c0baf482"                       "my-dataset-research-index-stairway-to-national-development-2015" "dt132020"                                                       </span>
+<span class="co">#&gt; [10] "dataset41_02"</span>
 <span class="co"># th_package_search("โควิด") # search for packages that contain the word "COVID" in Thai.</span>
 <span class="co"># ​th_package_show("3e9d9124-d187-4fc7-b2fb-22c681ceb4fe")</span></code></pre></div>
 </div>
