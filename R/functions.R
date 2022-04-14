@@ -71,9 +71,8 @@ to_table <- function(x, regex) {
 #' @examples
 #' # ASCII values means COVID in Thai
 #' th_package_search(keyword = intToUtf8(c(3650L, 3588L, 3623L, 3636L, 3604L)))
-th_package_search <- function(keyword, as_dataframe = TRUE) {
+th_package_search <- function(keyword) {
   checkmate::assert_string(keyword)
-  checkmate::assert_flag(as_dataframe)
   res <- .th_GET(build_ckan_url("package_search", query = list(q = keyword))) %>%
     httr::content()
   lapply(res[["result"]][["results"]], tidy_package)
@@ -116,6 +115,7 @@ build_ckan_url <- function(path, query = NULL) {
 }
 
 #' A shortcut to browse https://opendata.data.go.th/dataset in your browser
+#' @importFrom utils browseURL
 #' @export
 th_browse <- function() {
   browseURL("https://opendata.data.go.th/dataset")

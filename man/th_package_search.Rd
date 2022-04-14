@@ -4,7 +4,7 @@
 \alias{th_package_search}
 \title{Searches for packages satisfying a given search criteria.}
 \usage{
-th_package_search(keyword, as_dataframe = TRUE)
+th_package_search(keyword)
 }
 \arguments{
 \item{keyword}{keyword to search}
