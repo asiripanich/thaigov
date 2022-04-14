@@ -121,7 +121,7 @@ build_ckan_url <- function(path, query = NULL) {
 }
 
 #' A shortcut to browse https://opendata.data.go.th/dataset in your browser
-#' @export 
+#' @export
 th_browse <- function() {
-    browseURL("https://opendata.data.go.th/dataset")
+  browseURL("https://opendata.data.go.th/dataset")
 }
