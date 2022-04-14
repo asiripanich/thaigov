@@ -1,8 +1,14 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# thaigov 0.0.0.9002
+
+- Add API key to GHA.
+
+
 # thaigov 0.0.0.9001
 
 - Add MIT licence.
+
 
 # thaigov 0.0.0.9000
 
