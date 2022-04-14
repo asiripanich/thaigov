@@ -10,7 +10,7 @@ th_get <- function(resource_id) {
     httr::content()
   res[["result"]][["records"]] %>%
     lapply(function(x) data.table::as.data.table(x)) %>%
-    data.table::rbindlist()
+    data.table::rbindlist(fill = TRUE)
 }
 
 #' Return a list of the names of the site’s datasets (packages).
@@ -33,47 +33,40 @@ th_package_list <- function() {
 #' th_package_show("3e9d9124-d187-4fc7-b2fb-22c681ceb4fe")
 th_package_show <- function(package_id) {
   checkmate::assert_string(package_id)
-  res <- .th_GET(build_ckan_url("package_show", query = list(id = package_id))) %>%
+  pkg_result <- .th_GET(build_ckan_url("package_show", query = list(id = package_id))) %>%
     httr::content() %>%
     .[["result"]]
+  tidy_package(pkg_result)
+}
 
-  package_info <- res[sapply(res, function(x) {
-    !is.list(x)
-  })]
+tidy_package <- function(pkg_result) {
+  package_info <-
+    pkg_result[sapply(pkg_result, function(x) {
+      !is.list(x)
+    })]
 
-  organization_info <- res[grepl("^organization$", names(res))][[1]]
-
-  tag_info <- res[grepl("^tags$", names(res))][[1]] %>%
-    lapply(function(x) {
-      x[sapply(x, function(x2) !is.null(x2))]
-    }) %>%
-    data.table::rbindlist(fill = TRUE)
-
-  resource_info <- res[grepl("^resources$", names(res))][[1]] %>%
-    lapply(function(x) {
-      x[sapply(x, function(x2) !is.null(x2))]
-    }) %>%
-    data.table::rbindlist(fill = TRUE)
-
-  group_info <- res[grepl("^groups$", names(res))][[1]] %>%
-    lapply(function(x) {
-      x[sapply(x, function(x2) !is.null(x2))]
-    }) %>%
-    data.table::rbindlist(fill = TRUE)
+  organization_info <-
+    pkg_result[grepl("^organization$", names(pkg_result))][[1]]
 
   list(
     package = package_info,
     organization = organization_info,
-    tags = tag_info,
-    resourcess = resource_info,
-    groups = group_info
+    tags = to_table(pkg_result, "^tags$"),
+    resourcess = to_table(pkg_result, "^resources$"),
+    groups = to_table(pkg_result, "^groups$")
   )
+}
+
+to_table <- function(x, regex) {
+  x[grepl(regex, names(x))][[1]] %>%
+    lapply(function(x) {
+      x[sapply(x, function(x2) !is.null(x2))]
+    }) %>%
+    data.table::rbindlist(fill = TRUE)
 }
 
 #' Searches for packages satisfying a given search criteria.
 #' @param keyword keyword to search
-#' @param as_dataframe logical value whether to simplify the result into
-#'  a data.frame object. Default as TRUE.
 #' @export
 #' @examples
 #' # ASCII values means COVID in Thai
@@ -83,19 +76,21 @@ th_package_search <- function(keyword, as_dataframe = TRUE) {
   checkmate::assert_flag(as_dataframe)
   res <- .th_GET(build_ckan_url("package_search", query = list(q = keyword))) %>%
     httr::content()
-  if (as_dataframe) {
-    df <- lapply(
-      res[["result"]][["results"]],
-      function(x) {
-        unlist(x) %>%
-          t() %>%
-          data.table::as.data.table()
-      }
-    ) %>%
-      data.table::rbindlist(fill = TRUE)
-    return(df)
-  }
-  res
+  lapply(res[["result"]][["results"]], tidy_package)
+}
+
+#' Searches for resources satisfying a given search criteria.
+#' @param keyword keyword to search
+#' @export
+#' @examples
+#' # ASCII values means COVID in Thai
+#' th_resource_search(keyword = intToUtf8(c(3650L, 3588L, 3623L, 3636L, 3604L)))
+th_resource_search <- function(keyword) {
+  res <- build_ckan_url(path = "resource_search", query = list(query = paste0("description:", keyword))) %>%
+    GET(add_headers("api-key" = Sys.getenv("THGOV_OPENDATA_TOKEN"))) %>%
+    content()
+  res[["result"]][["results"]] %>%
+    data.table::rbindlist(fill = TRUE)
 }
 
 build_datastore_search_url <- function(query) {

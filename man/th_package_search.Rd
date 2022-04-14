@@ -8,9 +8,6 @@ th_package_search(keyword, as_dataframe = TRUE)
 }
 \arguments{
 \item{keyword}{keyword to search}
-
-\item{as_dataframe}{logical value whether to simplify the result into
-a data.frame object. Default as TRUE.}
 }
 \description{
 Searches for packages satisfying a given search criteria.
