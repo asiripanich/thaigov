@@ -20,12 +20,15 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 The goal of thaigov is to provide an easy access to the datasets on the [Open Government Data of Thailand](https://data.go.th/) API from R.
-
 The Thai documentation of the API can be viewed here: https://opendata.data.go.th/pages/data-go-th-api.
+
+เป้าหมายของ `thaigov` แพ็คเก็จคือการทำให้ผู้ใช้ R สามารถเข้าถึงข้อมูลเปิดของรัฐบาลไทยได้ง่ายยิ่งขึ้น คุณสามารถอ่านรายละเอียดของ API ได้ที่ https://opendata.data.go.th/pages/data-go-th-api
 
 ## Installation
 
 You can install the development version of thaigov from [GitHub](https://github.com/) with:
+
+ติดตั้งแพ็คเกจได้จาก GitHub โดยใช้โค้ดดังต่อไปนี้:
 
 ``` r
 # install.packages("devtools")
@@ -37,6 +40,9 @@ devtools::install_github("asiripanich/thaigov")
 First put your Open Government Data of Thailand API key in your machine's `.Renviron` file. 
 I normally use `usethis::edit_r_environ()` to find and open my `.Renviron` file.
 Insert the your API key in the following format: `THGOV_OPENDATA_TOKEN=<your-API-key>`.
+
+ก่อนอื่นเราต้องบันทึกค่า API คีย์ไปยัง `.Renviron` ไฟล์ ซึ่งคุณสามารถใช้ `usethis::edit_r_environ()` ในการเปิดไฟล์ขึ้นมา
+จากนั้นให้นำ API คีย์ลงไปใส่ดังต่อไปนี้ `THGOV_OPENDATA_TOKEN=<your-API-key>`
 
 ```{r example}
 library(thaigov)

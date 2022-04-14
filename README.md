@@ -9,15 +9,21 @@
 <!-- badges: end -->
 
 The goal of thaigov is to provide an easy access to the datasets on the
-[Open Government Data of Thailand](https://data.go.th/) API from R.
-
-The Thai documentation of the API can be viewed here:
+[Open Government Data of Thailand](https://data.go.th/) API from R. The
+Thai documentation of the API can be viewed here:
 <https://opendata.data.go.th/pages/data-go-th-api>.
+
+เป้าหมายของ `thaigov` แพ็คเก็จคือการทำให้ผู้ใช้ R
+สามารถเข้าถึงข้อมูลเปิดของรัฐบาลไทยได้ง่ายยิ่งขึ้น
+คุณสามารถอ่านรายละเอียดของ API ได้ที่
+<https://opendata.data.go.th/pages/data-go-th-api>
 
 ## Installation
 
 You can install the development version of thaigov from
 [GitHub](https://github.com/) with:
+
+ติดตั้งแพ็คเกจได้จาก GitHub โดยใช้โค้ดดังต่อไปนี้:
 
 ``` r
 # install.packages("devtools")
@@ -30,6 +36,10 @@ First put your Open Government Data of Thailand API key in your
 machine’s `.Renviron` file. I normally use `usethis::edit_r_environ()`
 to find and open my `.Renviron` file. Insert the your API key in the
 following format: `THGOV_OPENDATA_TOKEN=<your-API-key>`.
+
+ก่อนอื่นเราต้องบันทึกค่า API คีย์ไปยัง `.Renviron` ไฟล์ ซึ่งคุณสามารถใช้
+`usethis::edit_r_environ()` ในการเปิดไฟล์ขึ้นมา จากนั้นให้นำ API
+คีย์ลงไปใส่ดังต่อไปนี้ `THGOV_OPENDATA_TOKEN=<your-API-key>`
 
 ``` r
 library(thaigov)
@@ -145,8 +155,8 @@ covid_csv_datasets
 #> # … with 90 more rows
 
 th_package_list() %>% sample(size = 10)
-#>  [1] "10-2564"                                   "item_f12b5d48-5ac4-4faa-b32e-4d07e690b860" "tg132062101"                               "acoc_dataset_51_01"                        "harvest-dmcr"                             
-#>  [6] "dataset_12_012"                            "acc00001"                                  "tpso_data_16"                              "item_cacbbd7c-efae-42a8-8919-a3a5124560f7" "oncb-protect-company"
+#>  [1] "item_ed8058a7-2795-438d-8302-f430357750ff" "km-2563-2564"                              "01_01012"                                  "os_12_00024"                               "hydro-monthly-report"                     
+#>  [6] "td131931164"                               "cpipindexes"                               "my_jan_2562-2564"                          "item_a723b2ae-6a97-4c13-80ab-2baa86a3403d" "dataset03_3-2_06"
 # th_package_search("โควิด") # search for packages that contain the word "COVID" in Thai.
 # ​th_package_show("3e9d9124-d187-4fc7-b2fb-22c681ceb4fe")
 ```
