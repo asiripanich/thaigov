@@ -120,23 +120,33 @@ build_ckan_url <- function(path, query = NULL) {
   res
 }
 
-if (FALSE) {
-    url <- "https://opend.data.go.th/get-ckan/datastore_search?resource_id=3a282f85-406c-4ebf-be7f-5143718a866a"
-    url <- "https://opend.data.go.th/get-ckan/package_list"
-    url <- "https://opend.data.go.th/get-ckan/group_list"
-    url <- "https://opend.data.go.th/get-ckan/tag_list"
-    url <- 'https://opend.data.go.th/get-ckan/package_search?'
-    url <- "https://opend.data.go.th/get-ckan/package_show?id=3e9d9124-d187-4fc7-b2fb-22c681ceb4fe"
-    url <- build_datastore_search_url(query = list(resource_id = "c6715147-fae0-4291-9ddb-1b5e47c3baf3"))
-    res <- httr::GET(url, add_headers("api-key" = Sys.getenv("THGOV_OPENDATA_TOKEN"))) %>% httr::content()
+#' A shortcut to browse https://opendata.data.go.th/dataset in your browser
+#' @export 
+th_browse <- function() {
+    browseURL("https://opendata.data.go.th/dataset")
+}
 
-    road_data <- th_package_search("โควิด")
-    unlist(road_data) %>% data.table::as.data.table() %>% View()
-    data.table::as.data.table(road_data[3][[1]]$results)
-    x <- data.table::rbindlist(road_data[3][[1]]$results, fill=TRUE)
-    y <- road_data[3][[1]]$results %>%
-        purrr::map(~ unlist(.x) %>% t() %>% as.data.table()) %>%
-        data.table::rbindlist(fill = TRUE)
-    th_get("925dadf0-4606-4a03-b04d-15189653ff0f")
-    th_package_show("3e9d9124-d187-4fc7-b2fb-22c681ceb4fe")
+if (FALSE) {
+  url <- "https://opend.data.go.th/get-ckan/datastore_search?resource_id=3a282f85-406c-4ebf-be7f-5143718a866a"
+  url <- "https://opend.data.go.th/get-ckan/package_list"
+  url <- "https://opend.data.go.th/get-ckan/group_list"
+  url <- "https://opend.data.go.th/get-ckan/tag_list"
+  url <- "https://opend.data.go.th/get-ckan/package_search?"
+  url <- "https://opend.data.go.th/get-ckan/package_show?id=3e9d9124-d187-4fc7-b2fb-22c681ceb4fe"
+  url <- build_datastore_search_url(query = list(resource_id = "c6715147-fae0-4291-9ddb-1b5e47c3baf3"))
+  res <- httr::GET(url, add_headers("api-key" = Sys.getenv("THGOV_OPENDATA_TOKEN"))) %>% httr::content()
+
+  road_data <- th_package_search("โควิด")
+  unlist(road_data) %>%
+    data.table::as.data.table() %>%
+    View()
+  data.table::as.data.table(road_data[3][[1]]$results)
+  x <- data.table::rbindlist(road_data[3][[1]]$results, fill = TRUE)
+  y <- road_data[3][[1]]$results %>%
+    purrr::map(~ unlist(.x) %>%
+      t() %>%
+      as.data.table()) %>%
+    data.table::rbindlist(fill = TRUE)
+  th_get("925dadf0-4606-4a03-b04d-15189653ff0f")
+  th_package_show("3e9d9124-d187-4fc7-b2fb-22c681ceb4fe")
 }
