@@ -16,5 +16,6 @@ a data.frame object. Default as TRUE.}
 Searches for packages satisfying a given search criteria.
 }
 \examples{
-th_package_search("โควิด")
+# ASCII values means COVID in Thai
+th_package_search(keyword = intToUtf8(c(3650L, 3588L, 3623L, 3636L, 3604L)))
 }

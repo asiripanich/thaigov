@@ -4,12 +4,19 @@
 \name{thaigov-package}
 \alias{thaigov}
 \alias{thaigov-package}
-\title{thaigov: What the Package Does (One Line, Title Case)}
+\title{thaigov: Easy Access to the Open Government Data of Thailand}
 \description{
 What the package does (one paragraph).
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://asiripanich.github.io/thaigov/}
+}
+
+}
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Amarin Siripanich \email{asiripanich@icloud.com}
 
 }
 \keyword{internal}

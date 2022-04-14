@@ -76,7 +76,8 @@ th_package_show <- function(package_id) {
 #'  a data.frame object. Default as TRUE.
 #' @export
 #' @examples
-#' th_package_search("โควิด")
+#' # ASCII values means COVID in Thai
+#' th_package_search(keyword = intToUtf8(c(3650L, 3588L, 3623L, 3636L, 3604L)))
 th_package_search <- function(keyword, as_dataframe = TRUE) {
   checkmate::assert_string(keyword)
   checkmate::assert_flag(as_dataframe)
