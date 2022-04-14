@@ -45,195 +45,219 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">th_resource_search</span><span class="op">(</span><span class="va">keyword</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">th_resource_search</span><span class="op">(</span><span class="va">query</span><span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
-    <dl><dt>keyword</dt>
-<dd><p>keyword to search</p></dd>
+    <dl><dt>query</dt>
+<dd><p>query.</p></dd>
 </dl></div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># ASCII values means COVID in Thai</span></span>
-<span class="r-in"><span class="fu">th_resource_search</span><span class="op">(</span>keyword <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/utf8Conversion.html" class="external-link">intToUtf8</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">3650L</span>, <span class="fl">3588L</span>, <span class="fl">3623L</span>, <span class="fl">3636L</span>, <span class="fl">3604L</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Column 8 ['mimetype_inner'] of item 1 is length 0. This (and 73 others like it) has been filled with NA (NULL for list columns) to make each item uniform.</span>
+<span class="r-in"><span class="fu">th_resource_search</span><span class="op">(</span>query <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"name:"</span>, <span class="fu"><a href="https://rdrr.io/r/base/utf8Conversion.html" class="external-link">intToUtf8</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">3650L</span>, <span class="fl">3588L</span>, <span class="fl">3623L</span>, <span class="fl">3636L</span>, <span class="fl">3604L</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Column 8 ['mimetype_inner'] of item 1 is length 0. This (and 83 others like it) has been filled with NA (NULL for list columns) to make each item uniform.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     resource_disaggregate                             hash</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1:                    []                                 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  2:                    []                                 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  3:                    []                                 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  4:                    []                                 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  5:                    []                                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:                    [] 8351adf363a9727f156317f79bb03eb8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:                    [] ac85384daada9cd33a17e2201e765479</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:                    [] 440eede6e5b5b6bb1bf9622b27eafda0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:                    []                                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:                    [] d5c90dc50d467407cbc0670babf00dca</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:                    [] 26758e0c619fe1f9a216eba2e966abe8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:                    [] ed132c4b0d4ace8f2a53b3d8fddebf41</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:                    [] 1b8b2a1c3d6bdcbc074f594a54d39878</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           description</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   หลักสูตรออนไลน์ การดูแลจิตใจในวิกฤติโควิด-19 (VDO Clip)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    หลักสูตรออนไลน์ การดูแลจิตใจในวิกฤติโควิด-19 (ไฟล์เสียง)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ข่าวสารโควิด พฤษภาคม 2564 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ข้อมูลการตรวจโควิด-19 ในประเทศไทยตั้งแต่วันที่ 1 มกราคม 2563 - 2 เมษายน 2565 (Thailand COVID-19 Testing Data) (Raw Data) จาก กรมวิทยาศาสตร์การแพทย์\r\n</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5: \t\r\nข่าวสาร\r\nข่าวประชาสัมพันธ์\t\tการเงินและพัสดุ\t\tข้อมูลสถานประกอบกิจการ\t\tแผนปฏิบัติการป้องกันการทุจริต\t\tภาพกิจกรรม\t\tอินโฟกราฟิกมาตรการป้องกันไวรัสโควิด-19\t \r\n\r\n \tกิจกรรม "วัฒนธรรมสานฝัน ปันน้ำใจ คนไทย ไม่ทิ้งกัน“ มอบสิ่งของที่จำเป็น ข้าวสาร อาหารแห้ง และน้ำดื่ม\r\n \tสำนักงานวัฒนธรรมจังหวัดบึงกาฬ จัดการประชุมสร้างความรู้ความเข้าใจ ผู้นำทางศาสนา/ผู้นำชุมชน ตามโครงการพลังบวร\r\n \tนายวิสูตร ดวงสิมา วัฒนธรรมจังหวัดบึง กาฬ พร้อมข้าราชการเจ้าหน้าที่ รับ-มอบ สิ่งของเพื่อนำไปมอบให้กับ ผู้ที่ได้รับผลกระทบจากสถานการณ์ การแพร่ระบาดโรคติดเชื้อ ไวรัสโคโรนา 2019 (COVID -19)\r\n     \r\n\r\nองค์ความรู้ทางวัฒนธรรม\r\nประเพณีท้องถิ่น\t\tอาหารพื้นเมือง\t\tโบราณสถานและวัตถุ\t\tศิลปะการแสดง\t\tสินค้าทางวัฒนธรรม\t\tชาติพันธุ์\t \r\n \tพิธีสรงน้ำหลวงพ่อพระใหญ่\r\n \tสืบสานประเพณีแห่น้ำจั้น\r\n \tประเพณีสร้างปราสาทผึ้ง ถวายหลวงพ่อพระใหญ่(วัดโพธาราม)\r\n     \r\n\r\nมัลติมีเดีย\r\nคลังรูป\t\tวีดีโอ\t\tเอกสารดาวน์โหลด\t\tขอใบอนุญาตประกอบกิจการภาพยนต์ฯ\t\tE-book\t\tคลิปเสียงมาตรการป้องกันไวรัสโควิด-19\t \r\nรับการตรวจราชการ\r\n \tเครือข่ายเฝ้าระวังทางวัฒนธรรม\r\n     \r\nองค์ความรู้ทางวัฒนธรรม &gt;&gt; สินค้าทางวัฒนธรรม\r\nฮอก\r\nวันที่ 12 มิ.ย. 2556\r\n \r\n\r\n\r\n\r\n\r\n \r\n\r\nฮอกวัว ฮอกควาย (กระดิ่ง) ทำไม้จากไม้เนื้อแข็ง หรือโลหะ ใช้สำหรับคล้องคอวัว คอควายนำมาเหลา ตกแต่ง ให้เป็นรูปกลม รี แล้วแต่งขนาดที่ต้องการ ขนาดของฮอก ถ้าเป็นขนาดใหญ่มีเส้นผ่านศูนย์กลาง ประมาณ ๕ – ๖ นิ้ว ขนาดกลาง๓ -๔ นิ้ว ขนาดเล็ก ๒ นิ้ว ฮอกมีรูปร่างหลายอย่าง เช่น ฮอกที่มีรูปร่างเป็นสี่เหลี่ยมผืนผ้า มีมุมโค้งกลมเล็กน้อย มีค้อนหลาย ๆ ตัวห้อยอยู่ข้างใน ตรงกลางเหมือนระฆังมักใช้แขวน วัว ตัวที่เป็นจ่าฝูง เพราะมีเสียงดังกังวาล ฮอกที่แขวนเป็นพวงเรียกว่า หม่ากะหล๊ก การเลี้ยงสัตว์สมัยโบราณจะเลี้ยงโดยให้หากินเอง ด้วยการปล่อยให้กินหญ้าตามป่า ตามไหล่เขา ดังนั้นสัตว์ ชาวบ้านจึงใช้ฮอกเป็นสัญญาณ ให้รู้ตำแหน่งของของวัว ควาย ว่าอยู่ในตำแหน่งไหน\r\nปัจจุบันจะพบเห็นฮอกวัว ฮอกควาย ถูกนำไปจัดเก็บไว้ในพิพิธภัณฑ์ เพื่อให้คนรุ่นหลังได้รู้จัก</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ข่าวสารโควิด มิถุนายน 2564 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ข่าวสารโควิด ส.ค.2564 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ข่าวสารโควิด กรกฎาคม 2564 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ข่าวสารโควิด ก.ย. 2564 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ข่าวสารโควิด</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ข่าวสารโควิด</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ข่าวสารโควิด</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ข่าวสารโควิด</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:                    []                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:                    []                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8:                    [] 8351adf363a9727f156317f79bb03eb8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:                    [] ac85384daada9cd33a17e2201e765479</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:                    [] 440eede6e5b5b6bb1bf9622b27eafda0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11:                    []                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:                    [] d5c90dc50d467407cbc0670babf00dca</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13:                    [] 26758e0c619fe1f9a216eba2e966abe8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:                    [] ed132c4b0d4ace8f2a53b3d8fddebf41</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:                    [] 1b8b2a1c3d6bdcbc074f594a54d39878</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                     description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1:                                                                                             หลักสูตรออนไลน์ การดูแลจิตใจในวิกฤติโควิด-19 (VDO Clip)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:                                                                                                                                            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:                                                                                                                                            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:                                                                                              หลักสูตรออนไลน์ การดูแลจิตใจในวิกฤติโควิด-19 (ไฟล์เสียง)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:                                                                                                                    ข่าวสารโควิด พฤษภาคม 2564 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6: ข้อมูลการตรวจโควิด-19 ในประเทศไทยตั้งแต่วันที่ 1 มกราคม 2563 - 2 เมษายน 2565 (Thailand COVID-19 Testing Data) (Raw Data) จาก กรมวิทยาศาสตร์การแพทย์\r\n</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:                                                                                                                                            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8:                                                                                                                     ข่าวสารโควิด มิถุนายน 2564 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:                                                                                                                        ข่าวสารโควิด ส.ค.2564 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:                                                                                                                    ข่าวสารโควิด กรกฎาคม 2564 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11:                                                                                                                       ข่าวสารโควิด ก.ย. 2564 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:                                                                                                                                  ข่าวสารโควิด</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13:                                                                                                                                  ข่าวสารโควิด</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:                                                                                                                                  ข่าวสารโควิด</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:                                                                                                                                  ข่าวสารโควิด</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     resource_accessible_condition format resource_data_collect_other</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1:                                  URL                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:                                  URL                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:                                  CSV                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:                                  CSV                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:                          &lt;NA&gt;    API                        &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:                                  PDF                            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:                                  PDF                            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:                                  URL                            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:                                  CSV                            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  6:                                  CSV                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:                                  CSV                            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:                          &lt;NA&gt;    URL                        &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  8:                                  CSV                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:                       สาธารณะ    CSV                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:                       สาธารณะ    CSV                            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:                                  CSV                            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:                                  CSV                            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11:                       สาธารณะ    CSV                            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 12:                       สาธารณะ    CSV                            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 13:                       สาธารณะ    CSV                            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:                       สาธารณะ    CSV                            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:                       สาธารณะ    CSV                            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                               package_id mimetype_inner url_type</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1: 32156f22-10fd-4ee4-b4e9-6e7b627c4dac             NA     &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2: 32156f22-10fd-4ee4-b4e9-6e7b627c4dac             NA     &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 94a3d8c5-ade1-4deb-9f71-a18ff5aa678d             NA     &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4: 9f6d900f-f648-451f-8df4-89c676fce1c4             NA   upload</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5: 5eaac3dc-2cb1-4c4f-a9f0-f34d633a4990             NA     &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6: 94a3d8c5-ade1-4deb-9f71-a18ff5aa678d             NA     &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7: 94a3d8c5-ade1-4deb-9f71-a18ff5aa678d             NA     &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2: 15a62b5a-5a4d-4f8a-af5f-81fb780204f2             NA     &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 15a62b5a-5a4d-4f8a-af5f-81fb780204f2             NA     &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4: 32156f22-10fd-4ee4-b4e9-6e7b627c4dac             NA     &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5: 94a3d8c5-ade1-4deb-9f71-a18ff5aa678d             NA     &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6: 9f6d900f-f648-451f-8df4-89c676fce1c4             NA   upload</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7: e4d680b9-fa99-465d-8b33-b3e8d60564fd             NA     &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  8: 94a3d8c5-ade1-4deb-9f71-a18ff5aa678d             NA     &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  9: 94a3d8c5-ade1-4deb-9f71-a18ff5aa678d             NA     &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 10: 94a3d8c5-ade1-4deb-9f71-a18ff5aa678d             NA     &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11: 94a3d8c5-ade1-4deb-9f71-a18ff5aa678d             NA     &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 12: 94a3d8c5-ade1-4deb-9f71-a18ff5aa678d             NA     &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 13: 94a3d8c5-ade1-4deb-9f71-a18ff5aa678d             NA     &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14: 94a3d8c5-ade1-4deb-9f71-a18ff5aa678d             NA     &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15: 94a3d8c5-ade1-4deb-9f71-a18ff5aa678d             NA     &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     datastore_contains_all_records_of_source_file datastore_active</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1:                                         False            FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  2:                                         False            FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:                                         False             TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:                                          &lt;NA&gt;             TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:                                          &lt;NA&gt;            FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:                                         False             TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:                                         False             TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:                                         False            FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:                                         False            FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:                                         False             TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:                                          &lt;NA&gt;             TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:                                          &lt;NA&gt;            FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  8:                                         False             TRUE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  9:                                         False             TRUE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 10:                                         False             TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:                                          True             TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:                                          True             TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11:                                         False             TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:                                         False             TRUE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 13:                                          True             TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                       id    size mimetype cache_url</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1: d68713e3-5e97-4302-827f-72d78df49a14      NA     &lt;NA&gt;        NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2: c72e094c-7d5a-4e66-903a-f2d0ac0d0898      NA     &lt;NA&gt;        NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3: bd4b4de5-d46b-4bfe-8b83-f049663814af  602304 text/csv        NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4: 0092046c-db85-4608-b519-ce8af099315e  115229 text/csv        NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5: d4118ccc-fdac-46ae-97c6-d4497ae7ed80      NA     &lt;NA&gt;        NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6: 4789b9a8-92d3-4799-b14e-51b8229420ef  455293 text/csv        NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7: 31185193-74cd-44a3-bfa8-742b190e244a  502679 text/csv        NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8: f2d4f01f-e9d6-47db-8c5f-a39b23a23f58   72329 text/csv        NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9: 416512e8-49fc-42e9-af41-e12b51e4292f  368157 text/csv        NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10: 5b9bc31e-5cfd-46be-b7c0-01477dcb6cef  327054 text/csv        NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11: ff2e896c-42b0-42a1-a9ec-c60a4d9a208b  241382 text/csv        NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12: c56212c0-8bd2-459f-b3a9-5aa07569e888  194057 text/csv        NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13: f51e4545-55a9-45ed-861b-4c667d747195 2025278 text/csv        NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                        name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:         หลักสูตรออนไลน์ การดูแลจิตใจในวิกฤติโควิด-19 (VDO Clip)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:          หลักสูตรออนไลน์ การดูแลจิตใจในวิกฤติโควิด-19 (ไฟล์เสียง)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:                                   ข่าวสารโควิด พ.ค. 2564 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:  ข้อมูลการตรวจโควิด-19 ในประเทศไทย จาก กรมวิทยาศาสตร์การแพทย์</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:                                                     ฮอก</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:                                   ข่าวสารโควิด มิ.ย. 2564 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:                                    ข่าวสารโควิด ส.ค.2564 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:                                   ข่าวสารโควิด ก.ค. 2564 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:                                   ข่าวสารโควิด ก.ย. 2564 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:                                      ข่าวสารโควิด ต.ค. 64</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:                                      ข่าวสารโควิด พ.ย. 64</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:                                      ข่าวสารโควิด ธ.ค. 64</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:                                      ข่าวสารโควิด ม.ค. 65</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:                                          True             TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:                                          True             TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                       id    size        mimetype cache_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1: d68713e3-5e97-4302-827f-72d78df49a14      NA            &lt;NA&gt;        NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2: 48d1bb4e-830a-47c5-8faf-827a27155582 1494026 application/pdf        NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 5e8256d2-0311-43e8-8c59-b3005878577d 1051974 application/pdf        NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4: c72e094c-7d5a-4e66-903a-f2d0ac0d0898      NA            &lt;NA&gt;        NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5: bd4b4de5-d46b-4bfe-8b83-f049663814af  602304        text/csv        NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6: 0092046c-db85-4608-b519-ce8af099315e  115229        text/csv        NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7: 5b9326eb-572f-4258-a523-12d1c66b5ec2      NA            &lt;NA&gt;        NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8: 4789b9a8-92d3-4799-b14e-51b8229420ef  455293        text/csv        NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9: 31185193-74cd-44a3-bfa8-742b190e244a  502679        text/csv        NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10: f2d4f01f-e9d6-47db-8c5f-a39b23a23f58   72329        text/csv        NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11: 416512e8-49fc-42e9-af41-e12b51e4292f  368157        text/csv        NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12: 5b9bc31e-5cfd-46be-b7c0-01477dcb6cef  327054        text/csv        NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13: ff2e896c-42b0-42a1-a9ec-c60a4d9a208b  241382        text/csv        NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14: c56212c0-8bd2-459f-b3a9-5aa07569e888  194057        text/csv        NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15: f51e4545-55a9-45ed-861b-4c667d747195 2025278        text/csv        NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                         name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1:                                          หลักสูตรออนไลน์ การดูแลจิตใจในวิกฤติโควิด-19 (VDO Clip)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:               รายชื่อชุดตรวจและน้ำยาสำหรับโควิด 19 (COVID-19) สำหรับใช้โดยประชาชนทั่วไป (Home use)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3: รายชื่อชุดตรวจและน้ำยาสำหรับโควิด 19 (COVID-19) สำหรับใช้โดยบุคคลากรทางการแพทย์ (Professional use)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:                                           หลักสูตรออนไลน์ การดูแลจิตใจในวิกฤติโควิด-19 (ไฟล์เสียง)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:                                                                    ข่าวสารโควิด พ.ค. 2564 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:                                   ข้อมูลการตรวจโควิด-19 ในประเทศไทย จาก กรมวิทยาศาสตร์การแพทย์</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:                                                            รายการข่าวสารโควิด 19 ประจำเดือน</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8:                                                                    ข่าวสารโควิด มิ.ย. 2564 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:                                                                     ข่าวสารโควิด ส.ค.2564 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:                                                                    ข่าวสารโควิด ก.ค. 2564 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11:                                                                    ข่าวสารโควิด ก.ย. 2564 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:                                                                       ข่าวสารโควิด ต.ค. 64</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13:                                                                       ข่าวสารโควิด พ.ย. 64</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:                                                                       ข่าวสารโควิด ธ.ค. 64</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:                                                                       ข่าวสารโควิด ม.ค. 65</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              metadata_modified                    created</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1: 2021-05-25T08:49:26.984216 2021-05-25T08:43:01.081177</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2: 2021-05-25T08:49:26.984457 2021-05-25T08:45:23.583058</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 2021-09-23T09:16:22.441836 2021-07-19T03:22:13.445731</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:                       &lt;NA&gt; 2021-07-12T02:13:02.442588</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:                       &lt;NA&gt; 2021-07-29T06:49:40.665058</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6: 2021-09-23T09:16:40.864523 2021-07-19T03:22:44.159803</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7: 2021-09-23T09:17:16.457312 2021-09-01T08:16:45.444379</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8: 2021-10-14T07:10:02.535935 2021-09-23T09:15:30.773907</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9: 2021-11-15T06:24:08.953407 2021-10-14T07:10:02.554195</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10: 2021-12-29T01:55:55.745131 2021-11-15T06:24:08.971031</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11: 2021-12-29T01:55:59.470287 2021-12-29T01:55:55.774438</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12: 2022-01-18T03:11:53.276821 2022-01-18T03:11:49.971180</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13: 2022-02-15T13:27:40.012351 2022-02-15T13:27:35.337315</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2: 2021-09-16T07:49:57.986489 2021-09-16T07:49:19.757759</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 2021-09-16T07:49:57.986807 2021-09-16T07:49:57.993075</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4: 2021-05-25T08:49:26.984457 2021-05-25T08:45:23.583058</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5: 2021-09-23T09:16:22.441836 2021-07-19T03:22:13.445731</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:                       &lt;NA&gt; 2021-07-12T02:13:02.442588</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:                       &lt;NA&gt; 2021-09-09T08:20:06.562457</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8: 2021-09-23T09:16:40.864523 2021-07-19T03:22:44.159803</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9: 2021-09-23T09:17:16.457312 2021-09-01T08:16:45.444379</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10: 2021-10-14T07:10:02.535935 2021-09-23T09:15:30.773907</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11: 2021-11-15T06:24:08.953407 2021-10-14T07:10:02.554195</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12: 2021-12-29T01:55:55.745131 2021-11-15T06:24:08.971031</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13: 2021-12-29T01:55:59.470287 2021-12-29T01:55:55.774438</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14: 2022-01-18T03:11:53.276821 2022-01-18T03:11:49.971180</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15: 2022-02-15T13:27:40.012351 2022-02-15T13:27:35.337315</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                        url</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1:                                                                                                                                        https://dmh.go.th/covid19/video</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:                                                                                                                                                                       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:                      https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/bd4b4de5-d46b-4bfe-8b83-f049663814af/download/covid_may2021.csv</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4: https://data.go.th/dataset/9f6d900f-f648-451f-8df4-89c676fce1c4/resource/0092046c-db85-4608-b519-ce8af099315e/download/thailand_covid-19_testing_data_update020465.csv</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:                                                                                               https://www.m-culture.go.th/buengkan/ewt_news.php?nid=489&amp;filename=index</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:                     https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/4789b9a8-92d3-4799-b14e-51b8229420ef/download/covid_june2021.csv</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:                      https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/31185193-74cd-44a3-bfa8-742b190e244a/download/covid_aug2021.csv</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:                     https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/f2d4f01f-e9d6-47db-8c5f-a39b23a23f58/download/covid_july2021.csv</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:                     https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/416512e8-49fc-42e9-af41-e12b51e4292f/download/covid_sep_2021.csv</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:                     https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/5b9bc31e-5cfd-46be-b7c0-01477dcb6cef/download/covid_oct_2021.csv</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:                https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/ff2e896c-42b0-42a1-a9ec-c60a4d9a208b/download/covid_november_2021.csv</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:                     https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/c56212c0-8bd2-459f-b3a9-5aa07569e888/download/covid_dec_2021.csv</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:                     https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/f51e4545-55a9-45ed-861b-4c667d747195/download/covid_jan_2022.csv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:              https://catalog.fda.moph.go.th/dataset/15a62b5a-5a4d-4f8a-af5f-81fb780204f2/resource/48d1bb4e-830a-47c5-8faf-827a27155582/download/-covid-19-home-use.pdf</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:      https://catalog.fda.moph.go.th/dataset/15a62b5a-5a4d-4f8a-af5f-81fb780204f2/resource/5e8256d2-0311-43e8-8c59-b3005878577d/download/-covid-19-professional-use.pdf</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:                                                                                                                                                                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:                      https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/bd4b4de5-d46b-4bfe-8b83-f049663814af/download/covid_may2021.csv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6: https://data.go.th/dataset/9f6d900f-f648-451f-8df4-89c676fce1c4/resource/0092046c-db85-4608-b519-ce8af099315e/download/thailand_covid-19_testing_data_update020465.csv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:                                                                                                                      https://prd.gdcatalog.go.th/dataset/covid_may2564</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8:                     https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/4789b9a8-92d3-4799-b14e-51b8229420ef/download/covid_june2021.csv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:                      https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/31185193-74cd-44a3-bfa8-742b190e244a/download/covid_aug2021.csv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:                     https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/f2d4f01f-e9d6-47db-8c5f-a39b23a23f58/download/covid_july2021.csv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11:                     https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/416512e8-49fc-42e9-af41-e12b51e4292f/download/covid_sep_2021.csv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:                     https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/5b9bc31e-5cfd-46be-b7c0-01477dcb6cef/download/covid_oct_2021.csv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13:                https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/ff2e896c-42b0-42a1-a9ec-c60a4d9a208b/download/covid_november_2021.csv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:                     https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/c56212c0-8bd2-459f-b3a9-5aa07569e888/download/covid_dec_2021.csv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:                     https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/f51e4545-55a9-45ed-861b-4c667d747195/download/covid_jan_2022.csv</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                     created_at cache_last_updated  state</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1: 2021-05-25T08:43:01.081177                 NA active</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2: 2021-05-25T08:45:23.583058                 NA active</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 2021-07-19T03:22:13.445731                 NA active</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:                       &lt;NA&gt;                 NA active</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:                       &lt;NA&gt;                 NA active</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6: 2021-07-19T03:22:44.159803                 NA active</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7: 2021-09-01T08:16:45.444379                 NA active</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8: 2021-09-23T09:15:30.773907                 NA active</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9: 2021-10-14T07:10:02.554195                 NA active</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10: 2021-11-15T06:24:08.971031                 NA active</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11: 2021-12-29T01:55:55.774438                 NA active</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12: 2022-01-18T03:11:49.971180                 NA active</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13: 2022-02-15T13:27:35.337315                 NA active</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2: 2021-09-16T07:49:19.757759                 NA active</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 2021-09-16T07:49:57.993075                 NA active</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4: 2021-05-25T08:45:23.583058                 NA active</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5: 2021-07-19T03:22:13.445731                 NA active</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:                       &lt;NA&gt;                 NA active</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:                       &lt;NA&gt;                 NA active</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8: 2021-07-19T03:22:44.159803                 NA active</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9: 2021-09-01T08:16:45.444379                 NA active</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10: 2021-09-23T09:15:30.773907                 NA active</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11: 2021-10-14T07:10:02.554195                 NA active</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12: 2021-11-15T06:24:08.971031                 NA active</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13: 2021-12-29T01:55:55.774438                 NA active</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14: 2022-01-18T03:11:49.971180                 NA active</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15: 2022-02-15T13:27:35.337315                 NA active</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                  last_modified position                          revision_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1:                       &lt;NA&gt;        0 07820b19-aab4-4ec3-8391-f14749278f93</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:                       &lt;NA&gt;        1 07820b19-aab4-4ec3-8391-f14749278f93</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 2021-07-19T03:22:13.392064        1 9fc26ccc-34c2-4bce-9295-d237de547f98</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4: 2022-04-05T08:45:36.109147        1 00ef6fd3-9168-4d07-b0af-e0c5b5ef9f74</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:                       &lt;NA&gt;        1 7b339fd7-75b1-45fb-b0bc-ce82627bd13f</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6: 2021-07-19T03:22:44.074036        2 9fc26ccc-34c2-4bce-9295-d237de547f98</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7: 2021-09-01T08:16:45.375477        3 9fc26ccc-34c2-4bce-9295-d237de547f98</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8: 2021-09-23T09:15:30.693363        4 9fc26ccc-34c2-4bce-9295-d237de547f98</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9: 2021-10-14T07:10:02.497698        5 9fc26ccc-34c2-4bce-9295-d237de547f98</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10: 2021-12-29T01:53:58.377594        6 9fc26ccc-34c2-4bce-9295-d237de547f98</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11: 2021-12-29T01:55:55.703388        7 9fc26ccc-34c2-4bce-9295-d237de547f98</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12: 2022-01-18T03:11:49.907936        8 9fc26ccc-34c2-4bce-9295-d237de547f98</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13: 2022-02-15T13:27:35.260848        9 9fc26ccc-34c2-4bce-9295-d237de547f98</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2: 2021-09-16T07:49:19.739813        0 d5a397bb-bffa-408e-afee-823b29dd607b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 2021-09-16T07:49:57.972333        1 d5a397bb-bffa-408e-afee-823b29dd607b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:                       &lt;NA&gt;        1 07820b19-aab4-4ec3-8391-f14749278f93</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5: 2021-07-19T03:22:13.392064        1 9fc26ccc-34c2-4bce-9295-d237de547f98</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6: 2022-04-05T08:45:36.109147        1 00ef6fd3-9168-4d07-b0af-e0c5b5ef9f74</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:                       &lt;NA&gt;        2 f2fdf549-527d-4ddb-826f-d09f2f849a51</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8: 2021-07-19T03:22:44.074036        2 9fc26ccc-34c2-4bce-9295-d237de547f98</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9: 2021-09-01T08:16:45.375477        3 9fc26ccc-34c2-4bce-9295-d237de547f98</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10: 2021-09-23T09:15:30.693363        4 9fc26ccc-34c2-4bce-9295-d237de547f98</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11: 2021-10-14T07:10:02.497698        5 9fc26ccc-34c2-4bce-9295-d237de547f98</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12: 2021-12-29T01:53:58.377594        6 9fc26ccc-34c2-4bce-9295-d237de547f98</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13: 2021-12-29T01:55:55.703388        7 9fc26ccc-34c2-4bce-9295-d237de547f98</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14: 2022-01-18T03:11:49.907936        8 9fc26ccc-34c2-4bce-9295-d237de547f98</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15: 2022-02-15T13:27:35.260848        9 9fc26ccc-34c2-4bce-9295-d237de547f98</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     resource_type resource_data_collect resource_created_date</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1:            NA                                          NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  2:            NA                                          NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  3:            NA                                          NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  4:            NA                                          NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:            NA                  &lt;NA&gt;                    NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:            NA                                          NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  6:            NA                                          NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:            NA                                          NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:            NA                  &lt;NA&gt;                    NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  8:            NA                                          NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:            NA                   ไม่มี                    NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:            NA                   ไม่มี                    NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:            NA                                          NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:            NA                                          NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11:            NA                   ไม่มี                    NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 12:            NA                   ไม่มี                    NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 13:            NA                   ไม่มี                    NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:            NA                   ไม่มี                    NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:            NA                   ไม่มี                    NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     resource_last_updated_date</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1:                       &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  2:                       &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  3:                       &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:                 2022-04-05</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:                       &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  5:                       &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:                       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:                 2022-04-05</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  7:                       &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  8:                       &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  9:                       &lt;NA&gt;</span>
@@ -241,6 +265,8 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11:                       &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 12:                       &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 13:                       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:                       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:                       &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                original_url</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1:                                                                                                                                                    &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  2:                                                                                                                                                    &lt;NA&gt;</span>
@@ -252,9 +278,11 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span>  8:                                                                                                                                                    &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  9:                                                                                                                                                    &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 10:                                                                                                                                                    &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11: https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/ff2e896c-42b0-42a1-a9ec-c60a4d9a208b/download/covid_november_2021.csv</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:      https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/c56212c0-8bd2-459f-b3a9-5aa07569e888/download/covid_dec_2021.csv</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:      https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/f51e4545-55a9-45ed-861b-4c667d747195/download/covid_jan_2022.csv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11:                                                                                                                                                    &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:                                                                                                                                                    &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13: https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/ff2e896c-42b0-42a1-a9ec-c60a4d9a208b/download/covid_november_2021.csv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:      https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/c56212c0-8bd2-459f-b3a9-5aa07569e888/download/covid_dec_2021.csv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:      https://prd.gdcatalog.go.th/dataset/94a3d8c5-ade1-4deb-9f71-a18ff5aa678d/resource/f51e4545-55a9-45ed-861b-4c667d747195/download/covid_jan_2022.csv</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                              resource_id set_url_type ignore_hash</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1:                                 &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  2:                                 &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;</span>
@@ -266,9 +294,11 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span>  8:                                 &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  9:                                 &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 10:                                 &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11: ff2e896c-42b0-42a1-a9ec-c60a4d9a208b        False       False</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12: c56212c0-8bd2-459f-b3a9-5aa07569e888        False       False</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13: f51e4545-55a9-45ed-861b-4c667d747195        False       False</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11:                                 &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:                                 &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13: ff2e896c-42b0-42a1-a9ec-c60a4d9a208b        False       False</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14: c56212c0-8bd2-459f-b3a9-5aa07569e888        False       False</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15: f51e4545-55a9-45ed-861b-4c667d747195        False       False</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                        ckan_url               task_created</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1:                        &lt;NA&gt;                       &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  2:                        &lt;NA&gt;                       &lt;NA&gt;</span>
@@ -280,9 +310,11 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span>  8:                        &lt;NA&gt;                       &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  9:                        &lt;NA&gt;                       &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 10:                        &lt;NA&gt;                       &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11: https://prd.gdcatalog.go.th 2021-12-29 01:55:55.934413</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12: https://prd.gdcatalog.go.th 2022-01-18 03:11:50.139986</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13: https://prd.gdcatalog.go.th 2022-02-15 13:27:35.544257</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11:                        &lt;NA&gt;                       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:                        &lt;NA&gt;                       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13: https://prd.gdcatalog.go.th 2021-12-29 01:55:55.934413</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14: https://prd.gdcatalog.go.th 2022-01-18 03:11:50.139986</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15: https://prd.gdcatalog.go.th 2022-02-15 13:27:35.544257</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
