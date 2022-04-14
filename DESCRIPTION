@@ -1,6 +1,6 @@
 Package: thaigov
 Title: Easy Access to the Open Government Data of Thailand 
-Version: 0.0.0.9003
+Version: 0.0.0.9004
 Authors@R: 
     person("Amarin", "Siripanich", , "asiripanich@icloud.com", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
