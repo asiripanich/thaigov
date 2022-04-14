@@ -24,7 +24,7 @@ The Thai documentation of the API can be viewed here: https://opendata.data.go.t
 
 เป้าหมายของ `thaigov` แพ็คเก็จคือการทำให้ผู้ใช้ R สามารถเข้าถึงข้อมูลเปิดของรัฐบาลไทยได้ง่ายยิ่งขึ้น คุณสามารถอ่านรายละเอียดของ API ได้ที่ https://opendata.data.go.th/pages/data-go-th-api
 
-## Installation
+## Installation (การติดตั้ง)
 
 You can install the development version of thaigov from [GitHub](https://github.com/) with:
 
@@ -35,7 +35,7 @@ You can install the development version of thaigov from [GitHub](https://github.
 devtools::install_github("asiripanich/thaigov")
 ```
 
-## Example
+## Example (ตัวอย่าง)
 
 First put your Open Government Data of Thailand API key in your machine's `.Renviron` file. 
 I normally use `usethis::edit_r_environ()` to find and open my `.Renviron` file.

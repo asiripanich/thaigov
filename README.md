@@ -18,7 +18,7 @@ Thai documentation of the API can be viewed here:
 คุณสามารถอ่านรายละเอียดของ API ได้ที่
 <https://opendata.data.go.th/pages/data-go-th-api>
 
-## Installation
+## Installation (การติดตั้ง)
 
 You can install the development version of thaigov from
 [GitHub](https://github.com/) with:
@@ -30,7 +30,7 @@ You can install the development version of thaigov from
 devtools::install_github("asiripanich/thaigov")
 ```
 
-## Example
+## Example (ตัวอย่าง)
 
 First put your Open Government Data of Thailand API key in your
 machine’s `.Renviron` file. I normally use `usethis::edit_r_environ()`
@@ -155,8 +155,10 @@ covid_csv_datasets
 #> # … with 90 more rows
 
 th_package_list() %>% sample(size = 10)
-#>  [1] "item_ed8058a7-2795-438d-8302-f430357750ff" "km-2563-2564"                              "01_01012"                                  "os_12_00024"                               "hydro-monthly-report"                     
-#>  [6] "td131931164"                               "cpipindexes"                               "my_jan_2562-2564"                          "item_a723b2ae-6a97-4c13-80ab-2baa86a3403d" "dataset03_3-2_06"
+#>  [1] "garbage_service"                                                 "tpsok_13"                                                        "stat_set_th-csv"                                                
+#>  [4] "item_b5612bd8-6aa4-4c0d-b6e4-d925543ae772"                       "cfoubon-apr2564"                                                 "tpsocpi_3"                                                      
+#>  [7] "item_a99cfdc9-5d4e-443b-b561-d655c0baf482"                       "my-dataset-research-index-stairway-to-national-development-2015" "dt132020"                                                       
+#> [10] "dataset41_02"
 # th_package_search("โควิด") # search for packages that contain the word "COVID" in Thai.
 # ​th_package_show("3e9d9124-d187-4fc7-b2fb-22c681ceb4fe")
 ```
