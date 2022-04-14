@@ -1,0 +1,141 @@
+api_url <- "https://opend.data.go.th"
+
+#' Get a dataset from the Open Government Data of Thailand API.
+#' @param resource_id Resource ID of the dataset to download.
+#' @export
+#' @examples
+#' th_get("245c98c3-2f92-4d58-a892-3fabf2af0772")
+th_get <- function(resource_id) {
+  res <- .th_GET(build_datastore_search_url(list(resource_id = resource_id))) %>%
+    httr::content()
+  res[["result"]][["records"]] %>%
+    lapply(function(x) data.table::as.data.table(x)) %>%
+    data.table::rbindlist()
+}
+
+#' Return a list of the names of the site’s datasets (packages).
+#' @return a character vector.
+#' @export
+#' @examples
+#' th_package_list()
+th_package_list <- function() {
+  .th_GET(build_ckan_url("package_list")) %>%
+    httr::content() %>%
+    .[["result"]] %>%
+    unlist()
+}
+
+#' Return the metadata of a dataset (package) and its resources.
+#' @param package_id Package ID.
+#' @return a nested list.
+#' @export
+#' @examples
+#' th_package_show("3e9d9124-d187-4fc7-b2fb-22c681ceb4fe")
+th_package_show <- function(package_id) {
+  checkmate::assert_string(package_id)
+  res <- .th_GET(build_ckan_url("package_show", query = list(id = package_id))) %>%
+    httr::content() %>%
+    .[["result"]]
+
+  package_info <- res[sapply(res, function(x) {
+    !is.list(x)
+  })]
+
+  organization_info <- res[grepl("^organization$", names(res))][[1]]
+
+  tag_info <- res[grepl("^tags$", names(res))][[1]] %>%
+    lapply(function(x) {
+      x[sapply(x, function(x2) !is.null(x2))]
+    }) %>%
+    data.table::rbindlist(fill = TRUE)
+
+  resource_info <- res[grepl("^resources$", names(res))][[1]] %>%
+    lapply(function(x) {
+      x[sapply(x, function(x2) !is.null(x2))]
+    }) %>%
+    data.table::rbindlist(fill = TRUE)
+
+  group_info <- res[grepl("^groups$", names(res))][[1]] %>%
+    lapply(function(x) {
+      x[sapply(x, function(x2) !is.null(x2))]
+    }) %>%
+    data.table::rbindlist(fill = TRUE)
+
+  list(
+    package = package_info,
+    organization = organization_info,
+    tags = tag_info,
+    resourcess = resource_info,
+    groups = group_info
+  )
+}
+
+#' Searches for packages satisfying a given search criteria.
+#' @param keyword keyword to search
+#' @param as_dataframe logical value whether to simplify the result into
+#'  a data.frame object. Default as TRUE.
+#' @export
+#' @examples
+#' th_package_search("โควิด")
+th_package_search <- function(keyword, as_dataframe = TRUE) {
+  checkmate::assert_string(keyword)
+  checkmate::assert_flag(as_dataframe)
+  res <- .th_GET(build_ckan_url("package_search", query = list(q = keyword))) %>%
+    httr::content()
+  if (as_dataframe) {
+    df <- lapply(
+      res[["result"]][["results"]],
+      function(x) {
+        unlist(x) %>%
+          t() %>%
+          data.table::as.data.table()
+      }
+    ) %>%
+      data.table::rbindlist(fill = TRUE)
+    return(df)
+  }
+  res
+}
+
+build_datastore_search_url <- function(query) {
+  checkmate::assert_list(query, type = "character")
+  build_ckan_url("datastore_search", query)
+}
+
+build_ckan_url <- function(path, query = NULL) {
+  checkmate::assert_string(path)
+  checkmate::assert_list(query, type = "character", null.ok = TRUE)
+  httr::modify_url(api_url, path = c("get-ckan", path), query = query)
+}
+
+.th_GET <- function(url) {
+  res <- GET(
+    url,
+    add_headers("api-key" = Sys.getenv("THGOV_OPENDATA_TOKEN"))
+  )
+  if (isTRUE(httr::http_error(res))) {
+    stop(httr::http_status(res)[["message"]])
+  }
+  res
+}
+
+if (FALSE) {
+    url <- "https://opend.data.go.th/get-ckan/datastore_search?resource_id=3a282f85-406c-4ebf-be7f-5143718a866a"
+    url <- "https://opend.data.go.th/get-ckan/package_list"
+    url <- "https://opend.data.go.th/get-ckan/group_list"
+    url <- "https://opend.data.go.th/get-ckan/tag_list"
+    url <- 'https://opend.data.go.th/get-ckan/package_search?'
+    url <- "https://opend.data.go.th/get-ckan/package_show?id=3e9d9124-d187-4fc7-b2fb-22c681ceb4fe"
+    url <- build_datastore_search_url(query = list(resource_id = "c6715147-fae0-4291-9ddb-1b5e47c3baf3"))
+    res <- httr::GET(url, add_headers("api-key" = Sys.getenv("THGOV_OPENDATA_TOKEN"))) %>% httr::content()
+
+    road_data <- th_package_search("โควิด")
+    unlist(road_data) %>% data.table::as.data.table() %>% View()
+    data.table::as.data.table(road_data[3][[1]]$results)
+    x <- data.table::rbindlist(road_data[3][[1]]$results, fill=TRUE)
+    y <- road_data[3][[1]]$results %>%
+        purrr::map(~ unlist(.x) %>% t() %>% as.data.table()) %>%
+        data.table::rbindlist(fill = TRUE)
+    th_get("925dadf0-4606-4a03-b04d-15189653ff0f")
+    th_package_show("3e9d9124-d187-4fc7-b2fb-22c681ceb4fe")
+}

@@ -1,0 +1,48 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# thaigov
+
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/asiripanich/thaigov/workflows/R-CMD-check/badge.svg)](https://github.com/asiripanich/thaigov/actions)
+<!-- badges: end -->
+
+The goal of thaigov is to provide an easy access to the datasets on the [Open Government Data of Thailand](https://data.go.th/) API from R.
+
+The Thai documentation of the API can be viewed here: https://opendata.data.go.th/pages/data-go-th-api.
+
+## Installation
+
+You can install the development version of thaigov from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("asiripanich/thaigov")
+```
+
+## Example
+
+First put your Open Government Data of Thailand API key in your machine's `.Renviron` file. 
+I normally use `usethis::edit_r_environ()` to find and open my `.Renviron` file.
+Insert the your API key in the following format: `THGOV_OPENDATA_TOKEN=<your-API-key>`.
+
+```{r example}
+library(thaigov)
+
+th_package_list() %>% sample(size = 10)
+th_package_search("โควิด")[, 1:3] # search for packages that contain the word "COVID" in Thai.
+th_package_show("3e9d9124-d187-4fc7-b2fb-22c681ceb4fe")
+th_get("245c98c3-2f92-4d58-a892-3fabf2af0772")
+```
