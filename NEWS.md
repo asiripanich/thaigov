@@ -1,7 +1,8 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
-# thaigov 0.0.0.9009
+# thaigov 0.0.0.9010
 
+- Unlock the default limit of 100 rows of datastore_search.
 - Add Thai instructions on README
 - Add `th_resource_search()`
 - Add `th_browse()`.
