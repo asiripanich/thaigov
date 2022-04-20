@@ -2,13 +2,28 @@ api_url <- "https://opend.data.go.th"
 
 #' Get a dataset from the Open Government Data of Thailand API.
 #' @param resource_id Resource ID of the dataset to download.
+#' @param limit by default this is set to 999,999,999,999 rows.
 #' @export
 #' @examples
 #' th_get("245c98c3-2f92-4d58-a892-3fabf2af0772")
-th_get <- function(resource_id) {
-  res <- .th_GET(build_datastore_search_url(list(resource_id = resource_id))) %>%
-    httr::content()
-  res[["result"]][["records"]] %>%
+th_get <- function(resource_id, limit = 999999999999, ...) {
+  checkmate::assert_string(resource_id)
+  checkmate::assert_number(limit)
+
+  query <- list(
+    resource_id = resource_id,
+    limit = limit,
+    ...
+  ) %>% lapply(function(x) ifelse(!is.character(x), as.character(x), x))
+
+  checkmate::assert_list(query, "character")
+
+  url <- build_ckan_url("datastore_search", query)
+  message("URL: ", url)
+  .th_GET(url) %>%
+    httr::content() %>% {
+      .[["result"]][["records"]]
+    } %>%
     lapply(function(x) data.table::as.data.table(x)) %>%
     data.table::rbindlist(fill = TRUE)
 }
@@ -90,11 +105,6 @@ th_resource_search <- function(query) {
     content()
   res[["result"]][["results"]] %>%
     data.table::rbindlist(fill = TRUE)
-}
-
-build_datastore_search_url <- function(query) {
-  checkmate::assert_list(query, type = "character")
-  build_ckan_url("datastore_search", query)
 }
 
 build_ckan_url <- function(path, query = NULL) {

@@ -52,7 +52,7 @@ covid_resources <- th_resource_search("name:COVID-19") # search for resources th
 covid_resources %>% as_tibble()
 covid_csv_datasets <- covid_resources %>%
   .[format == "CSV" & !is.na(id), id] %>%
-  lapply(function(x) th_get(x) %>% as_tibble())
+  lapply(function(x) th_get(x, limit = 100) %>% as_tibble())
 covid_csv_datasets
 
 th_package_list() %>% sample(size = 10)

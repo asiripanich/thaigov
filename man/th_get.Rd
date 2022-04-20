@@ -4,10 +4,12 @@
 \alias{th_get}
 \title{Get a dataset from the Open Government Data of Thailand API.}
 \usage{
-th_get(resource_id)
+th_get(resource_id, limit = 999999999999, ...)
 }
 \arguments{
 \item{resource_id}{Resource ID of the dataset to download.}
+
+\item{limit}{by default this is set to 999,999,999,999 rows.}
 }
 \description{
 Get a dataset from the Open Government Data of Thailand API.
